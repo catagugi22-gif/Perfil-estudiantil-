@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Perfil Personal | Portafolio</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	background: #f8f5ff;
+	color: #29213b;
+}
+
+/* ENCABEZADO */
+
+header {
+	background: linear-gradient(120deg, #7655c9, #b58ae8, #ed9ccf);
+	padding: 25px 8%;
+	color: white;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+
+.logo {
+	font-size: 23px;
+	font-weight: 800;
+}
+
+nav a {
+	color: white;
+	text-decoration: none;
+	margin-left: 20px;
+	font-size: 13px;
+	font-weight: 500;
+}
+
+nav a:hover {
+	color: #ffe1f3;
+}
+
+/* PRESENTACIÓN */
+
+.hero {
+	min-height: 570px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 40px;
+	padding: 65px 8%;
+	background: linear-gradient(120deg, #7655c9, #b58ae8, #ed9ccf);
+	color: white;
+}
+
+.hero-text {
+	max-width: 580px;
+}
+
+.etiqueta {
+	background: #ffffff35;
+	display: inline-block;
+	padding: 9px 18px;
+	border-radius: 30px;
+	font-size: 12px;
+	margin-bottom: 20px;
+}
+
+.hero h1 {
+	font-size: clamp(38px, 6vw, 65px);
+	line-height: 1.15;
+	margin-bottom: 20px;
+}
+
+.hero h1 span {
+	color: #ffe0f1;
+}
+
+.hero p {
+	line-height: 1.9;
+	font-size: 15px;
+}
+
+.foto-contenedor {
+	width: 270px;
+	height: 310px;
+	flex-shrink: 0;
+	border: 7px solid #ffffff70;
+	border-radius: 35px;
+	overflow: hidden;
+	box-shadow: 0 15px 40px #38205b50;
+	transform: rotate(3deg);
+}
+
+.foto-contenedor img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* SECCIONES */
+
+section {
+	padding: 75px 9%;
+}
+
+.titulo {
+	text-align: center;
+	margin-bottom: 45px;
+}
+
+.titulo span {
+	color: #a276d8;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 3px;
+}
+
+.titulo h2 {
+	font-size: 32px;
+	margin-top: 10px;
+}
+
+.titulo p {
+	color: #81768e;
+	margin-top: 10px;
+	font-size: 14px;
+}
+
+/* TARJETAS */
+
+.tarjetas {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+	gap: 22px;
+}
+
+.tarjeta {
+	background: white;
+	padding: 28px;
+	border-radius: 22px;
+	box-shadow: 0 8px 30px #6d4c9b12;
+	transition: .3s;
+	border: 1px solid #eee5fa;
+}
+
+.tarjeta:hover {
+	transform: translateY(-9px);
+	box-shadow: 0 15px 35px #8060ad25;
+}
+
+.icono {
+	font-size: 35px;
+	margin-bottom: 15px;
+}
+
+.tarjeta h3 {
+	font-size: 17px;
+	margin-bottom: 12px;
+	color: #7854b8;
+}
+
+.tarjeta p {
+	font-size: 13px;
+	color: #716a7b;
+	line-height: 1.9;
+}
+
+/* ASPIRACIONES */
+
+.aspiraciones {
+	background: #f0e9fb;
+}
+
+.pregunta {
+	background: white;
+	padding: 23px;
+	border-radius: 17px;
+	margin-bottom: 15px;
+	border-left: 5px solid #a77bdd;
+}
+
+.pregunta h3 {
+	font-size: 15px;
+	color: #805bbd;
+	margin-bottom: 8px;
+}
+
+.pregunta p {
+	font-size: 14px;
+	color: #6e6679;
+	line-height: 1.8;
+}
+
+/* TECNOLOGÍA */
+
+.tecnologias {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+
+.tecnologia {
+	background: white;
+	border: 1px solid #eadcf9;
+	padding: 17px 24px;
+	border-radius: 15px;
+	font-size: 14px;
+	font-weight: 600;
+	box-shadow: 0 5px 15px #8060ad12;
+	transition: .3s;
+}
+
+.tecnologia:hover {
+	background: #a276d8;
+	color: white;
+	transform: scale(1.06);
+}
+
+/* FRASE FINAL */
+
+.frase {
+	text-align: center;
+	background: linear-gradient(120deg, #7655c9, #b58ae8, #ed9ccf);
+	color: white;
+	padding: 65px 10%;
+}
+
+.frase h2 {
+	font-size: 27px;
+	margin-bottom: 15px;
+}
+
+.frase p {
+	font-size: 14px;
+	line-height: 1.9;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+	text-align: center;
+	background: #29213b;
+	color: white;
+	padding: 25px;
+	font-size: 12px;
+}
+
+@media(max-width: 700px) {
+	nav {
+		justify-content: center;
+	}
+
+	nav a {
+		margin: 5px;
+	}
+
+	.hero {
+		flex-direction: column-reverse;
+		text-align: center;
+	}
+
+	.foto-contenedor {
+		width: 220px;
+		height: 250px;
+	}
+
+	section {
+		padding: 55px 6%;
+	}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ENCABEZADO -->
+
+<header>
+<nav>
+	<div class="logo">✦ MI PERFIL</div>
+	<div>
+		<a href="#presentacion">Inicio</a>
+		<a href="#aspiraciones">Aspiraciones</a>
+		<a href="#tecnologia">Tecnología</a>
+		<a href="#intereses">Intereses</a>
+	</div>
+</nav>
+</header>
+
+<!-- PRESENTACIÓN -->
+
+<div class="hero" id="presentacion">
+
+	<div class="hero-text">
+
+		<span class="etiqueta">✧ CONOCE UN POCO SOBRE MÍ ✧</span>
+
+		<h1>¡Hola!<br>Soy <span>Catalina Gutierrez </span></h1>
+
+		<p>
+		Soy una estudiante de bachillerato que busca superarse
+		cada día a través de sus estudios. Mi propósito es
+		prepararme para tener mejores oportunidades en la universidad.
+		Aunque todavía estoy descubriendo mi camino profesional,
+		tengo muchas metas y sueños por cumplir.
+		</p>
+
+	</div>
+
+	<div class="foto-contenedor">
+		<img src="c:\Users\USUARIO\Downloads\WhatsApp Image 2026-11-04 at 8.34.15 AM (1).jpeg" alt="Foto de perfil">
+	</div>
+
+</div>
+
+<!-- ASPIRACIONES EDUCATIVAS -->
+
+<section class="aspiraciones" id="aspiraciones">
+
+	<div class="titulo">
+		<span>MI FUTURO</span>
+		<h2>🎓 Aspiraciones educativas</h2>
+		<p>Mis sueños, objetivos y planes después del colegio.</p>
+	</div>
+
+	<div class="pregunta">
+		<h3>¿Qué me gustaría estudiar después del colegio?</h3>
+		<p>Todavía no tengo una carrera decidida, pero quiero continuar mis estudios y encontrar una profesión que realmente me apasione.</p>
+	</div>
+
+	<div class="pregunta">
+		<h3>¿Qué área profesional me interesa?</h3>
+		<p>Me llama la atención el área de la salud animal, porque me gustaría aprender más sobre el cuidado y bienestar de los animales.</p>
+	</div>
+
+	<div class="pregunta">
+		<h3>¿Qué habilidades quiero desarrollar?</h3>
+		<p>Quiero adquirir nuevos conocimientos, aprender sobre los temas relacionados con esa carrera y desarrollar habilidades que me ayuden en mi futuro profesional.</p>
+	</div>
+
+	<div class="pregunta">
+		<h3>¿Dónde me gustaría continuar mi formación?</h3>
+		<p>Me gustaría estudiar en Tuluá o en el departamento del Quindío, buscando una buena oportunidad para mi educación superior.</p>
+	</div>
+
+</section>
+
+<!-- TECNOLOGÍA -->
+
+<section id="tecnologia">
+
+	<div class="titulo">
+		<span>INNOVACIÓN Y APRENDIZAJE</span>
+		<h2>💻 Intereses tecnológicos</h2>
+		<p>Algunas áreas de la tecnología que puedo explorar y conocer.</p>
+	</div>
+
+	<div class="tecnologias">
+
+		<div class="tecnologia">🤖 Inteligencia artificial</div>
+
+		<div class="tecnologia">🌐 Diseño web</div>
+
+		<div class="tecnologia">🎮 Videojuegos</div>
+
+		<div class="tecnologia">🐴 Criadero equino</div>
+
+		<div class="tecnologia">🎨 Diseño gráfico</div>
+
+		<div class="tecnologia">🐾 Medicina animal</div>
+
+        <div class="tecnologia">🎬 Comunicacion</div>
+
+	</div>
+
+</section>
+
+<!-- OTROS INTERESES -->
+
+<section id="intereses" style="background:#f0e9fb;">
+
+	<div class="titulo">
+		<span>MÁS SOBRE MÍ</span>
+		<h2>✨ Otros intereses</h2>
+		<p>Mis motivaciones y lo que quiero descubrir</p>
+	</div>
+
+	<div class="tarjetas">
+
+		<div class="tarjeta">
+			<div class="icono">📚</div>
+			<h3>Aprendizaje</h3>
+			<p>Me interesa seguir aprendiendo, adquirir conocimientos y prepararme para las oportunidades que llegarán en mi vida.</p>
+		</div>
+
+		<div class="tarjeta">
+			<div class="icono">🐾</div>
+			<h3>Salud animal</h3>
+			<p>Es un área que despierta mi curiosidad y en la que me gustaría profundizar para conocer más sobre el bienestar animal.</p>
+		</div>
+
+		<div class="tarjeta">
+			<div class="icono">🌷</div>
+			<h3>Superación personal</h3>
+			<p>Quiero crecer como persona, cumplir mis objetivos y construir poco a poco el futuro que deseo.</p>
+		</div>
+
+        <div class="tarjeta">
+			<div class="icono">🎀</div>
+			<h3>Sueños</h3>
+			<p>Mis sueños son más grandes que mis miedos. Cada esfuerzo que hago hoy es un paso más cerca de la vida que quiero construir mañana. No necesito tener todo resuelto, solo creer en mí, aprender de cada experiencia y nunca dejar de intentarlo.</p>
+		</div>
+
+        <div class="tarjeta">
+			<div class="icono">✈️</div>
+			<h3>Viajes</h3>
+			<p>Uno de mis sueños es viajar, conocer lugares nuevos, disfrutar de cada experiencia y crear recuerdos bonitos. Espero algún día poder conocer muchos lugares y vivir aventuras que siempre recuerde</p>
+		</div>
+
+        <div class="tarjeta">
+			<div class="icono">🦋</div>
+			<h3>Metas</h3>
+			<p>Quiero aprovechar cada oportunidad que se me presente, aprender cosas nuevas y demostrarme que soy capaz de lograr todo lo que me proponga.</p>
+		</div>
+
+        <div class="tarjeta">
+			<div class="icono">💸</div>
+			<h3>Estabilidad económica</h3>
+			<p>Tambien es tener estabilidad económica, ganar mi propio dinero, darme mis gustos, ayudar a mi familia y poder comprar todo aquello por lo que tanto he trabajado</p>
+		</div>
+
+        <div class="tarjeta">
+			<div class="icono">🏥</div>
+			<h3>Salud</h3>
+			<p>Mi mayor deseo es tener salud, cuidar de mí y de las personas que quiero, porque al final lo más importante es estar bien, disfrutar la vida y tener la oportunidad de cumplir nuestros sueños.</p>
+		</div>
+
+
+	</div>
+
+</section>
+
+<!-- FRASE FINAL -->
+
+<div class="frase">
+
+	<h2>🌟 Cada sueño comienza con una decisión</h2>
+
+	<p>
+	No importa si todavía no tengo todo mi futuro definido.
+	Lo importante es seguir aprendiendo, esforzarme y aprovechar
+	cada oportunidad para acercarme a la persona que quiero ser.
+	</p>
+
+</div>
+
+<!-- PIE DE PÁGINA -->
+
+<footer>
+	✦ Mi perfil académico | 2026 ✦
+	<p>Construyendo mi futuro un aprendizaje a la vez, gracias por ver</p>
+</footer>
+
+</body>
+</html>

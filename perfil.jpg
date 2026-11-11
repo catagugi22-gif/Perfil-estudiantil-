@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Foto de medio cuerpo</title>
+	<style>
+		* { box-sizing: border-box; }
+		body {
+			margin: 0;
+			min-height: 100vh;
+			display: grid;
+			place-items: center;
+			background: #111;
+		}
+		img {
+			display: block;
+			width: min(100vw, 900px);
+			aspect-ratio: 3 / 2;
+			object-fit: cover;
+			object-position: center 48%;
+		}
+	</style>
+</head>
+<body>
+	<img src="img.jpg">
+</body>
+</html>
